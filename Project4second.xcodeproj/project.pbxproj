@@ -13,6 +13,7 @@
 		7A88B918259F3D5E00AF3241 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A88B916259F3D5E00AF3241 /* Main.storyboard */; };
 		7A88B91A259F3D5F00AF3241 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A88B919259F3D5F00AF3241 /* Assets.xcassets */; };
 		7A88B91D259F3D5F00AF3241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A88B91B259F3D5F00AF3241 /* LaunchScreen.storyboard */; };
+		7A88B927259F75D100AF3241 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A88B926259F75D100AF3241 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7A88B919259F3D5F00AF3241 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A88B91C259F3D5F00AF3241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A88B91E259F3D5F00AF3241 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A88B926259F75D100AF3241 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				7A88B910259F3D5E00AF3241 /* AppDelegate.swift */,
 				7A88B912259F3D5E00AF3241 /* SceneDelegate.swift */,
 				7A88B914259F3D5E00AF3241 /* ViewController.swift */,
+				7A88B926259F75D100AF3241 /* ListViewController.swift */,
 				7A88B916259F3D5E00AF3241 /* Main.storyboard */,
 				7A88B919259F3D5F00AF3241 /* Assets.xcassets */,
 				7A88B91B259F3D5F00AF3241 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				7A88B915259F3D5E00AF3241 /* ViewController.swift in Sources */,
 				7A88B911259F3D5E00AF3241 /* AppDelegate.swift in Sources */,
+				7A88B927259F75D100AF3241 /* ListViewController.swift in Sources */,
 				7A88B913259F3D5E00AF3241 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

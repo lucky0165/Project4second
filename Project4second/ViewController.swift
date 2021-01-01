@@ -12,19 +12,23 @@ class ViewController: UIViewController, WKNavigationDelegate {
 
     var webView: WKWebView!
     var progressView: UIProgressView!
-    var websites = ["apple.com", "hackingwithswift.com", "google.com"]
+    var websites = ["apple.com", "hackingwithswift.com", "google.com", "udemy.com"]
+    
+    var selectedWebsite: String?
     
     override func loadView() {
         webView = WKWebView()
         webView.navigationDelegate = self
         view = webView
+        print("loadview")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: "https://" + websites[0])!
+        let url = URL(string: "https://" + selectedWebsite!)!
         webView.load(URLRequest(url: url))
+
         webView.allowsBackForwardNavigationGestures = true
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
@@ -35,7 +39,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
         progressView.sizeToFit()
         let progress = UIBarButtonItem(customView: progressView)
         
-        toolbarItems = [progress, spacer, refresh]
+        let goBack = UIBarButtonItem(title: "Back", style: .plain, target: webView, action: #selector(webView.goBack))
+        let goForward = UIBarButtonItem(title: "Forward", style: .plain, target: webView, action: #selector(webView.goForward))
+        
+        
+        toolbarItems = [goBack, goForward , progress, spacer, refresh]
         navigationController?.isToolbarHidden = false
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
@@ -48,7 +56,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         for website in websites {
             aSheet.addAction(UIAlertAction(title: website, style: .default, handler: openPage))
         }
-        
+
         aSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(aSheet, animated: true, completion: nil)
@@ -82,10 +90,17 @@ class ViewController: UIViewController, WKNavigationDelegate {
                     return
                 }
             }
+            
         }
+        
         decisionHandler(.cancel)
+        
+        let alert = UIAlertController(title: "This page is blocked.", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
         
     }
     
+
 }
 
